@@ -557,7 +557,7 @@ class Gem::Specification
     rescue SignalException, SystemExit
       raise
     rescue SyntaxError, Exception => e
-      warn "Invalid gemspec in [#{file}]: #{e}"
+      warn "Invalid gemspec in [#{file}]: (#{e.class.name}) #{e}\n#{e.backtrace.join("\n")}"
     end
 
     nil
